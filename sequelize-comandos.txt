@@ -1,0 +1,16 @@
+sequelize
+sequelize-cli --dev
+
+npx sequelize --init
+
+config -> src
+migration e database -> src/database
+models -> app
+
+.sequelizerc -> Configura os diretorios
+
+npx sequelize migration:create --name=create-users -> Cria migration
+
+Banco postgres precisa da extensão "pg"
+
+
