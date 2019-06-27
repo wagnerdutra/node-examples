@@ -1,6 +1,8 @@
 sequelize
 sequelize-cli --dev
 
+add pg para postgress
+
 npx sequelize --init
 
 config -> src
