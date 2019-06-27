@@ -1,4 +1,6 @@
-require("dotenv"); // Utilizado para ao executar a cli do sequelize ele saibar usar
+require("dotenv").config({
+  path: process.env.NODE_ENV === "test" ? ".env.test" : ".env"
+}); // Utilizado para ao executar a cli do sequelize ele saibar usar
 // as variaveis de acordo
 
 module.exports = {
@@ -7,8 +9,7 @@ module.exports = {
   password: process.env.DB_PASSWORD,
   database: process.env.DB_NAME,
   dialect: process.env.DB_DIALECT || "postgres",
-  storage: "./__tests__/database.sqlit", // Local onde deve ser salvo o banco, no caso, arquivo para sqlite
-  operatorsAliases: false, // Para de dar warning no inicio da aplicação
+  storage: "./__tests__/database.sqlite", // Local onde deve ser salvo o banco, no caso, arquivo para sqlite
   define: {
     timestamps: true,
     undescored: true,

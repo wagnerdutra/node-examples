@@ -2,6 +2,15 @@ const express = require("express");
 
 const routes = express.Router();
 
-routes.get("/", (req, res) => res.send("Hello World"));
+const { User } = require("./app/models");
+
+routes.get("/", async (req, res) => {
+  const user = await User.create({
+    name: "Wagner",
+    email: "wagnerdutra1010@gmail.com"
+  });
+
+  return res.json({ user });
+});
 
 module.exports = routes;
